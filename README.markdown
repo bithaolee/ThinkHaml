@@ -305,7 +305,7 @@ HAML代码：
   <?php } ?>
 </div>
 ```
-# ThinkPHP配置（注意：ThinkPHP的版本需要 >= 3.2.1）
+## ThinkPHP配置（注意：ThinkPHP的版本需要 >= 3.2.1）
 在 Application目录下建立Lib/gallery目录，创建完后看起来大概是这个样子
 ``` shell
  ├── Application                … 应用代码目录
