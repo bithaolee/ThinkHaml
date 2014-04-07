@@ -1,0 +1,12 @@
+{
+    "name": "mr5/ThinkHaml",
+    "description": "ThinkHaml is a PHP template engine, some modern features included. Such as SASS and HAML,  assets management, the assets management support minify js and css file, and make css,js,image file concat or inline",
+    "minimum-stability": "stable",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Decent Woo",
+            "email": "mr5.simple@gmail.com"
+        }
+    ]
+}
