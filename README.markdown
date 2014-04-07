@@ -238,12 +238,16 @@ HAML注释同样支持多行，遵守HAML的缩进嵌套规则：
   =$doc['subject'].', 作者：'.$doc['author']
   =$doc['body']
   %a(href=U('article/read'.$doc['id'])) 阅读全部
+%p 文本中也可以插入变量和PHP代码#{$var}，函数也可以像这样：#{U('account/login')}
 ```
 会被编译成：
 ``` php
 <p>
   <?php echo $doc['subject'].', 作者：'.$doc['author']; echo $doc['body'] ?>
   <a href="<?php echo U('article/read'.$doc['id']) ?>">阅读全部</a>
+</p>
+<p>
+    文本中也可以插入变量和PHP代码<?php echo $var; ?>，函数也可以像这样：<?php echo U('account/login');?>
 </p>
 ```
 ### 循环和迭代
