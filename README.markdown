@@ -11,7 +11,9 @@ ThinkHaml是[HAML](http://haml-lang.com)的一个PHP实现，HAML来自于Ruby�
 ThinkPHP版本 >= 3.2.1
 # 语法介绍
 作为HAML的PHP实现，ThinkHaml的大多数语法都与标准的HAML语言类似。但由于PHP与Ruby的语言差异，ThinkHaml与标准的HAML存在局部少量的差异。
+
 ## 基本语法：
+
 ### doctype
 ``` haml
 !!! 5
@@ -116,8 +118,9 @@ HAML标签以`%`号打头，后面紧跟HTML标签名：
 <div class="panel-heading"></div>
 <div class="panel-body"></div>
 ```
-** 注意不同缩进生成的不同HTML代码。**
-
+****
+注意不同缩进生成的不同HTML代码。
+****
 ### 标签内容
 HAML标签的内容与标签在同一行，使用空格区隔
 ``` haml
@@ -302,8 +305,40 @@ HAML代码：
   <?php } ?>
 </div>
 ```
+# ThinkPHP配置（注意：ThinkPHP的版本需要 >= 3.2.1）
+在 Application目录下建立Lib/gallery目录，创建完后看起来大概是这个样子
+``` shell
+ ├── Application                … 应用代码目录
+    ├── Common                  … 公共目录（作用于所有模块）
+        ├── Common              …
+        └── Conf                … 公共配置目录
+            ├── config.php      … 通用配置(ThinkHaml的配置写入到这里)
+    └── Lib                     … 项目类库目录
+        └── gallery             … 第三方类库
+    ...(其他目录)
+```
+将以下配置写入`/Application/Common/Conf/config.php` (如果不需要全局启用，请写入到相应的模块配置文件中)
+``` php
+  'TMPL_TEMPLATE_SUFFIX'  =>  '.haml',     // 默认模板文件后缀
+  
+  'AUTOLOAD_NAMESPACE' => array(
+      'gallery'     => APP_PATH.'Lib/gallery'
+  ),
+  'TMPL_ENGINE_TYPE'=>'gallery\ThinkHaml\ThinkPHPBundler'
+```
+然后模板文件改用.haml后缀即可。控制器中`display`方法与使用ThinkPHP内置模板引擎时无任何差别。
+目前仅支持include语法，extend和layout均不支持。include的用法如下：
+``` haml
+%include(file="Common:header")
+```
+等价于：
+``` html
+<include file="Common:header" />
+```
+
 # RoadMap（将来支持）
 * 在ThinkPHP中同时支持HTML和HAML作为模板文件（.html后缀文件作为html渲染，.haml后缀文件作为haml渲染）
+* 与THinkPHP一致的extend、layout
 * 清晰明朗的HTML转义机制
 * 支持scss解析
 * 简单、一体化的前端集成工具
