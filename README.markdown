@@ -3,12 +3,15 @@ ThinkHaml是[HAML](http://haml-lang.com)的一个PHP实现，HAML来自于Ruby�
 ## HAML的优点
 * 减少模板文件的代码量，平均可以减少一半
 * 强制缩进，源文件结构清晰，极大方便团队协作与后期维护
+
 ## HAML的主要特点
 * 全部是单标签，不像HTML那样需要大量使用成对的标签来表示嵌套
 * 使用缩进来表示嵌套而不是使用标签来嵌套
 * 与HTML的知识基本差不多，上手成本不高，所以不用害怕。
+
 # 系统要求
 ThinkPHP版本 >= 3.2.1
+
 # 语法介绍
 作为HAML的PHP实现，ThinkHaml的大多数语法都与标准的HAML语言类似。但由于PHP与Ruby的语言差异，ThinkHaml与标准的HAML存在局部少量的差异。
 
@@ -310,7 +313,7 @@ HAML代码：
 </div>
 ```
 ## ThinkPHP配置（注意：ThinkPHP的版本需要 >= 3.2.1）
-在 Application目录下建立Lib/gallery目录，创建完后看起来大概是这个样子
+在 Application目录下建立Lib/gallery目录，然后将ThinkHaml代码放入gellery下面，看起来大概是这个样子：
 ``` shell
  ├── Application                … 应用代码目录
     ├── Common                  … 公共目录（作用于所有模块）
@@ -319,6 +322,7 @@ HAML代码：
             ├── config.php      … 通用配置(ThinkHaml的配置写入到这里)
     └── Lib                     … 项目类库目录
         └── gallery             … 第三方类库
+            └── ThinkHaml       … ThinkHaml所在目录
     ...(其他目录)
 ```
 将以下配置写入`/Application/Common/Conf/config.php` (如果不需要全局启用，请写入到相应的模块配置文件中)
