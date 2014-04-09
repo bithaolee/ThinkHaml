@@ -1,5 +1,5 @@
 # 简介
-ThinkHaml是[HAML](http://haml-lang.com)的一个PHP实现，HAML来自于Ruby社区。目前支持作为ThinkPHP的模板引擎。HAML解析部分主要代码来自[MtHaml](https://github.com/arnaud-lb/MtHaml/)。
+ThinkHaml是[HAML](http://haml-lang.com)的一个PHP实现，HAML来自于Ruby社区。目前支持作为ThinkPHP的模板引擎。ThinkHaml的HAML解析功能主要代码来自[MtHaml](https://github.com/arnaud-lb/MtHaml/)。
 ## HAML的优点
 * 减少模板文件的代码量，平均可以减少一半
 * 强制缩进，源文件结构清晰，极大方便团队协作与后期维护
