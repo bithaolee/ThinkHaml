@@ -345,9 +345,8 @@ HAML代码：
 ```
 
 # RoadMap（将来支持）
-* 在ThinkPHP中同时支持HTML和HAML作为模板文件（.html后缀文件作为html渲染，.haml后缀文件作为haml渲染）
+* 在ThinkPHP中同时支持HTML和HAML作为模板文件（.html后缀文件作为html渲染，.haml后缀文件作为haml渲染）（已实现）
 * 与THinkPHP一致的extend、layout
-* 清晰明朗的HTML转义机制
 * 支持scss解析
 * 简单、一体化的前端集成工具
   * css文件依赖管理
